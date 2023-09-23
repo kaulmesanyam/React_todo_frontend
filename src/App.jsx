@@ -1,6 +1,6 @@
 import React from "react";
 
-function App() {
+function useTodos() {
   const [todos, setTodos] = React.useState([]);
 
   React.useEffect(() => {
@@ -13,6 +13,12 @@ function App() {
       })
     });
   }, []);
+
+  return todos;
+}
+
+function App() {
+  const todos = useTodos();
 
   return (
     <dev>
